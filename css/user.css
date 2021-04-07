@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    background: url(../images/bg7.jpg) no-repeat center center/cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.user-container {
+    display: grid;
+    grid-template-areas: 'navbar navbar navbar navbar ' 'section section section aside';
+}
+
+section {
+    grid-area: section;
+}
+
+aside {
+    grid-area: aside;
+}
+
+/* Navigation Bar */
+
+nav {
+    grid-area: navbar;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    padding: 5px;
+    /* justify-content: center; */
+}
+
+nav::before {
+    content: "";
+    background-color: rgba(47, 43, 43, 0.551);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Navigation Bar: List Styling */
+
+nav ul {
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a {
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+ /* font addition start */
+ @font-face {
+    font-family: ubuntu;
+    src: url(../fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: Baloo Bhai;
+    src: url(../fonts/BalooBhai-Regular.ttf);
+}
+
+@font-face {
+    font-family: baskerville;
+    src: url(../fonts/LibreBaskerville-Regular.ttf);
+}
+
+.view-btn{
+    display: inline-block;
+    background-color: rgb(24, 194, 24);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    padding: 3px;
+    width: 3rem;
+    text-align: center;
+}
+.view-btn:hover{
+    background-color: green;
+}
+section{
+   background-color: rgba(61, 49, 49, 0.442);
+    padding: 10px;
+} 
+.heading h3{
+    text-align: center;
+    color: white;
+    font-family: ubuntu;
+    margin-bottom: 10px;
+}
+h3{
+    color: white;
+    font-family: sans-serif;
+}
