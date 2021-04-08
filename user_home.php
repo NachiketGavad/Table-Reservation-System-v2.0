@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <div class="user-container"></div>
     <nav class="navbar">
         <ul>
             <li><a href="#">Home</a></li>

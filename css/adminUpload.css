@@ -4,22 +4,6 @@
     padding: 0;
 }
 
- /* font addition start */
- @font-face {
-    font-family: ubuntu;
-    src: url(../fonts/Ubuntu-Medium.ttf);
-}
-
-@font-face {
-    font-family: Baloo Bhai;
-    src: url(../fonts/BalooBhai-Regular.ttf);
-}
-
-@font-face {
-    font-family: baskerville;
-    src: url(../fonts/LibreBaskerville-Regular.ttf);
-}
-
 body::before {
     content: "";
     background: url(../images/bg7.jpg) no-repeat center center/cover;
@@ -29,6 +13,17 @@ body::before {
     width: 100vw;
     height: 100vh;
     z-index: -1;
+}
+
+ /* font addition start */
+ @font-face {
+    font-family: ubuntu;
+    src: url(../fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: Baloo Bhai;
+    src: url(../fonts/BalooBhai-Regular.ttf);
 }
 
 .user-container {
@@ -90,32 +85,12 @@ nav ul li a:hover {
     color: black;
     background-color: white;
 }
-
-.view-btn{
-    display: inline-block;
-    background-color: rgb(24, 194, 24);
-    border: 1px solid black;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    padding: 3px;
-    width: 3rem;
+.upload-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-}
-.view-btn:hover{
-    background-color: green;
-}
-section{
-   background-color: rgba(61, 49, 49, 0.442);
-    padding: 10px;
-} 
-.heading h3{
-    text-align: center;
-    color: white;
-    font-family: ubuntu;
-    margin-bottom: 10px;
-}
-h3{
-    color: white;
-    font-family: sans-serif;
+    flex-flow: column wrap;
+    width: 10rem;
+    margin: auto
 }

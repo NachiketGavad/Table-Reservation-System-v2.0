@@ -7,6 +7,8 @@ $backlink = ' <a href="./">Go back</a>';
 // File upload path
 $targetDir = "photo/";
 $fileName = basename($_FILES["file"]["name"]);
+$hotelName = $_POST['hotel_name'];
+$capacity = $_POST['capacity'];
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
@@ -18,7 +20,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
                 // Upload file to server
             if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
                 // Insert image file name into database
-                $insert = $db->query("INSERT into hotel (hotel_name,capacity,photo ) VALUES ('".$hotelName."','".$capacity."','".$fileName."' ");
+                $insert = $conn->query("INSERT into `hotel` (`hotel_name`,`capacity`,`photo` ) VALUES ('".$hotelName."','".$capacity."','".$fileName."' ");
                 if($insert){
                     $statusMsg = "The file <b>".$fileName. "</b> has been uploaded successfully." . $backlink;
                 }else{
