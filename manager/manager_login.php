@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
         </div>
         <div class="login-container">
             <div class="main">
-                <h1>Owner Login</h1>
+                <h1>Manager Login</h1>
                 <p class="login-item">Please fill the details to Login.</p>
                 <hr class="login-item">
                 <label for="Username"><b>User Name</b></label><br>
@@ -58,6 +58,6 @@ if (isset($_POST['login'])) {
             </div>
         </div>
     </form>
-    <?php require_once "owner_login_query.php"; ?>
+    <?php require_once "manager_login_query.php"; ?>
 </body>
 </html>

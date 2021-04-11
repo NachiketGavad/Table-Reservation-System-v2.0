@@ -12,10 +12,10 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Menu</a></li>
+            <li><a href="user_home.php">Home</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="index.php">Menu</a></li>
         </ul>
     </nav>
     <section>
@@ -25,6 +25,8 @@
         <?php
         require_once 'database/conn.php';
         $query = $conn->query("SELECT * FROM `hotel` ORDER BY `hotel_id` ASC") or die(mysqli_error($conn));
+        $query1 = $conn->query("SELECT * FROM `customer`") or die(mysqli_error($conn));
+        $fetch1 = $query1->fetch_array();
         while ($fetch = $query->fetch_array()) {
         ?>
             <div class="well" style="height:300px; width:100%;">
@@ -34,7 +36,7 @@
                 <div style="float:left; margin-left:10px;">
                     <h3><?php echo $fetch['hotel_name'] ;echo " ("; echo  $fetch['hotel_location']; echo")" ?></h3>
                     <br />
-                    <a href="hotel_view.php?hotel_id=<?php echo $fetch['hotel_id'] ?>" class="view-btn"> View</a>
+                    <a href="hotel_view.php?hotel_id=<?php echo $fetch['hotel_id'] ?>&customer_id=<?php echo $fetch1['customer_id'] ?>" class="view-btn"> View</a>
                 </div>
             </div>
         <?php

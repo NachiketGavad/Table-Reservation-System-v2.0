@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
         session_start();
         $_SESSION['id'] = $fetch['customer_id'];
 
-        header("location:index2.html");
+        header("location:user_home.php");
     } else {
 ?>
         <script>

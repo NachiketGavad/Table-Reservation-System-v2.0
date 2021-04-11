@@ -5,7 +5,7 @@
 ?>
 <html lang = "en">
 	<head>
-		<title>Create Manager Accounts</title>
+		<title>Owner Home</title>
 		<meta charset = "utf-8" />
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.css " />
@@ -15,7 +15,7 @@
 	<nav style = "background-color:rgba(0, 0, 0, 0.1);" class = "navbar navbar-default">
 		<div  class = "container-fluid">
 			<div class = "navbar-header">
-				<a class = "navbar-brand" >Manager Accounts</a>
+				<a class = "navbar-brand" >Owner Home</a>
 			</div>
 			<ul class = "nav navbar-nav pull-right ">
 				<li class = "dropdown">
@@ -29,46 +29,25 @@
 	</nav>
 	<div class = "container-fluid">	
 		<ul class = "nav nav-pills">
-			<li><a href = "home.php">Home</a></li>
-			<li class = "active"><a href = "account.php">Accounts</a></li>
+			<li class = "active"><a href = "home.php">Home</a></li>
+			<li><a href = "account.php">Accounts</a></li>
+			<li><a href = "../index.php">Main menu</a></li>
 		</ul>	
 	</div>
 	<br />
 	<div class = "container-fluid">
 		<div class = "panel panel-default">
 			<div class = "panel-body">
-				<div class = "alert alert-info">Account / Create Account</div>
-				<br />
-				<div class = "col-md-4">	
-					<form method = "POST">
-						<div class = "form-group">
-							<label>Name </label>
-							<input type = "text" class = "form-control" name = "name" />
-						</div>
-						<div class = "form-group">
-							<label>Username </label>
-							<input type = "text" class = "form-control" name = "username" />
-						</div>
-						<div class = "form-group">
-							<label>Password </label>
-							<input type = "password" class = "form-control" name = "password" />
-						</div>
-						<br />
-						<div class = "form-group">
-							<button name = "add_account" class = "btn btn-info form-control"><i class = "glyphicon glyphicon-save"></i> Saved</button>
-						</div>
-					</form>
-					<?php require_once 'add_query_account.php'?>
-				</div>
+				<center><img src = "../images/back.jpg" width="800px" heigh="600px" /></center>
 			</div>
 		</div>
 	</div>
 	<br />
 	<br />
 	<div style = "text-align:right; margin-right:10px;" class = "navbar navbar-default navbar-fixed-bottom">
-		<label>&copy; Mini Project 1B  </label>
+		<label>&copy; Mini Project 1B </label>
 	</div>
 </body>
 <script src = "../js/jquery.js"></script>
-<script src = "../js/bootstrap.js"></script>
+<script src = "../js/bootstrap.js"></script>	
 </html>

@@ -88,7 +88,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: black;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .view-btn{
@@ -106,7 +106,7 @@ nav ul li a:hover {
     background-color: green;
 }
 section{
-   background-color: rgba(61, 49, 49, 0.442);
+   background-color: rgba(100, 83, 103, 0.204);
     padding: 10px;
 } 
 .heading h3{
@@ -118,4 +118,20 @@ section{
 h3{
     color: white;
     font-family: sans-serif;
+}
+.cap{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    width: 33vw;
+    font-size: 1.2rem;
+    font-family: ubuntu;
+    margin: 2rem auto;
+    padding: 1rem;
+    line-height: 2rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(116, 145, 226, 0.85);
+    color: rgb(255, 254, 253);
 }
