@@ -1,5 +1,5 @@
 <?php
 	session_start();
-	session_unset('owner_id');
+	session_unset();
 	header("location:owner_login.php");
 ?>

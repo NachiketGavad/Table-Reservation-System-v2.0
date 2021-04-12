@@ -30,7 +30,8 @@
 	<div class = "container-fluid">	
 		<ul class = "nav nav-pills">
 			<li class = "active"><a href = "home.php">Home</a></li>
-			<li><a href = "account.php">Accounts</a></li>
+			<li><a href = "account.php">Manager Accounts</a></li>
+            <li><a href="hotel.php">Hotel</a></li>
 			<li><a href = "../index.php">Main menu</a></li>
 		</ul>	
 	</div>
