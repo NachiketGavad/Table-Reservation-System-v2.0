@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+require_once 'validate.php';
+require 'name.php';
+?>
 <html lang="en">
 
 <head>
@@ -34,7 +38,10 @@
                     <img src="photo/<?php echo $fetch['photo'] ?>" height="200" width="280" />
                 </div>
                 <div style="float:left; margin-left:10px;">
-                    <h3><?php echo $fetch['hotel_name'] ;echo " ("; echo  $fetch['hotel_location']; echo")" ?></h3>
+                    <h3><?php echo $fetch['hotel_name'];
+                        echo " (";
+                        echo  $fetch['hotel_location'];
+                        echo ")" ?></h3>
                     <br />
                     <a href="hotel_view.php?hotel_id=<?php echo $fetch['hotel_id'] ?>&customer_id=<?php echo $fetch1['customer_id'] ?>" class="view-btn"> View</a>
                 </div>

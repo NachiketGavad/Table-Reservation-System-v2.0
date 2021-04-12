@@ -1,27 +1,3 @@
-<?php
-
-include "database/conn.php";
-
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $query = $conn->query("SELECT * FROM `customer` WHERE `username` = '$username' && `password` = '$password' ") or die(mysqli_error(die));
-    $fetch = $query->fetch_array();
-    $row = $query->num_rows;
-
-    if ($row > 0) {
-        session_start();
-        $_SESSION['id'] = $fetch['customer_id'];
-
-        header("location:user_home.php");
-    } else {
-?>
-        <script>
-            alert("Invalid username or password");
-        </script><?php
-                }
-            }
-                    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +8,11 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
+<?php include 'header.php'; ?>
     <form method="POST">
         <div class="icon">
             <img src="icons/user.png" alt="">
@@ -57,10 +35,10 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
 
-            <p class="center">Don't have an account? <a href="signup.php">Sign up now</a>.</p>
+            <p class="center">Don't have an account? <a href="customer_signup.php">Sign up now</a>.</p>
         </div>
     </form>
-
+    <?php require_once "customer_login_query.php"; ?>
 </body>
 
 </html>

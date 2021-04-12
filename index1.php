@@ -15,7 +15,7 @@
     <div class="user">
         <div class="user-item">
             <img src="images/customer.jpg" alt="image not loaded" height="250" width="350">
-            <a href="login.php" class="view-btn">Customer</a>
+            <a href="customer_login.php" class="view-btn">Customer</a>
         </div>
         <div class="user-item">
             <img src="images/owner.jpg" alt="image not loaded" height="250" width="350">

@@ -19,7 +19,7 @@ body::before {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 30px auto;
+    margin: -10px auto;
     border: 2px solid black;
     background: linear-gradient(to bottom left, rgba(97, 5, 184, 0.8), rgba(253, 197, 255, 0.8));
     border-radius: 20px;
@@ -60,7 +60,7 @@ label{
     position: relative;
     align-items: center;
     justify-content: center;
-    top: 55px;
+    top: 15px;
     margin: auto;
     height: 50px;
     width: 50px;

@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owner Login Page</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
+<?php include 'admin_header.php'; ?>
     <form method="POST">
         <div class="icon">
             <img src="../icons/user.png" alt="">

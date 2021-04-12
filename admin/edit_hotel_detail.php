@@ -49,7 +49,7 @@ require 'name.php';
 					?>
 					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group">
-							<label>Hootel Name</label>
+							<label>Hotel Name</label>
 							<input type="varchar" min="0" max="9999" value="<?php echo $fetch['hotel_name'] ?>" class="form-control" name="hotel_name" />
 						</div>
 						<div class="form-group">

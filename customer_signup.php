@@ -1,57 +1,3 @@
-<!-- here is one  -->
-
-<?php
-
-$showAlert = false;
-$showError = false;
-$exists = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Include file which makes the 
-    // Database Connection. 
-    include "database/conn.php";
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $cpassword = $_POST["cpassword"];
-    $fname = $_POST["firstname"];
-    $lname = $_POST["lastname"];
-    $contact = $_POST["contactno"];
-
-    $sql = "Select * from customer where username='$username'";
-
-    $result = mysqli_query($conn, $sql);
-
-    $num = mysqli_num_rows($result);
-
-    // This sql query is use to check if 
-    // the username is already present  
-    // or not in our Database 
-    if ($num == 0) {
-        if (($password == $cpassword) && $exists == false) {
-
-            $sql = "INSERT INTO `customer` ( `username`,  
-                `firstname`,`lastname`,`contactno`,`password`) VALUES ('$username',  
-                '$fname','$lname','$contact','$password')";
-
-            $result = mysqli_query($conn, $sql);
-
-            if ($result) {
-                $showAlert = true;
-            }
-        } else {
-            $showError = "Passwords do not match";
-        }
-    } // end if  
-
-    if ($num > 0) {
-        $exists = "Username not available";
-    }
-} //end if    
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,9 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
+    <?php include 'header.php'; ?>
     <form method="post">
         <div class="icon">
             <img src="icons/user.png" alt="">
@@ -77,10 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" placeholder="Enter Username" name="username" class="login-item" required><br>
                 <label>Details</label>
                 <div class="login-item">
-                    <input type="text" placeholder="Firstname" name="firstname" required="required" />
-                </div>
-                <div class="login-item">
-                    <input type="text" placeholder="Lastname" name="lastname" required="required" />
+                    <input type="text" placeholder="Name" name="customer_name" required="required" />
                 </div>
                 <div class="login-item">
                     <input type="text" placeholder="Contact No." name="contactno" required="required" />
@@ -97,7 +42,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" class="center">Sign Up</button>
                 <button type="reset" class="center">Reset</button>
             </div>
-            <p class="center"> Already have an account? <a href="login.php">Login here</a>.</p>
+            <p class="center"> Already have an account? <a href="customer_login.php">Login here</a>.</p>
+            <!-- here is one  -->
+
+            <?php
+
+            $showAlert = false;
+            $showError = false;
+            $exists = false;
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                // Include file which makes the 
+                // Database Connection. 
+                include "database/conn.php";
+
+                $username = $_POST["username"];
+                $password = $_POST["password"];
+                $cpassword = $_POST["cpassword"];
+                $fname = $_POST["customer_name"];
+                $contact = $_POST["contactno"];
+
+                $sql = "Select * from customer where username='$username'";
+
+                $result = mysqli_query($conn, $sql);
+
+                $num = mysqli_num_rows($result);
+
+                // This sql query is use to check if 
+                // the username is already present  
+                // or not in our Database 
+                if ($num == 0) {
+                    if (($password == $cpassword) && $exists == false) {
+
+                        $sql = "INSERT INTO `customer` ( `username`,  
+                `customer_name`,`contactno`,`password`) VALUES ('$username',  
+                '$fname','$contact','$password')";
+
+                        $result = mysqli_query($conn, $sql);
+
+                        if ($result) {
+                            $showAlert = true;
+                        }
+                    } else {
+                        $showError = "Passwords do not match";
+                    }
+                } // end if  
+
+                if ($num > 0) {
+                    $exists = "Username not available";
+                }
+            } //end if    
+
+            ?>
+
             <!-- here is second  -->
             <?php
 
@@ -106,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
                 <script type="text/javascript">
                     alert("Registration Successful");
-                    location.href = 'login.php';
+                    location.href = 'customer_login.php';
                 </script>
             <?php
                 // header("location:login.php");
