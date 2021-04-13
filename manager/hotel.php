@@ -55,8 +55,6 @@ $owner_id = $_SESSION['owner_id'];
                 if ($num == 0) {
                 }
                 ?>
-                <br />
-                <br />
                 <table id="table" class="table table-bordered">
                     <thead>
                         <tr>

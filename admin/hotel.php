@@ -56,8 +56,6 @@ $owner_id = $_SESSION['owner_id'];
                     echo '<a class = "btn btn-success" href = "add_hotel_detail.php"><i class = "glyphicon glyphicon-plus"></i> Add Hotel Details</a>';
                 }
                 ?>
-                <br />
-                <br />
                 <table id="table" class="table table-bordered">
                     <thead>
                         <tr>
