@@ -39,7 +39,7 @@
 	<div class = "container-fluid">
 		<div class = "panel panel-default">
 			<div class = "panel-body">
-				<center><img src = "../images/back.jpg" width="800px" heigh="600px" /></center>
+				<center><img src = "../images/owner.jpg" width="800px" heigh="600px" /></center>
 			</div>
 		</div>
 	</div>

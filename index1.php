@@ -15,15 +15,15 @@
     <div class="user">
         <div class="user-item">
             <img src="images/customer.jpg" alt="image not loaded" height="250" width="350">
-            <a href="customer_login.php" class="view-btn">Customer</a>
+            <a href="user_home.php" class="view-btn">Customer</a>
         </div>
         <div class="user-item">
             <img src="images/owner.jpg" alt="image not loaded" height="250" width="350">
-            <a href="admin/owner_login.php" class="view-btn">Owner</a>
+            <a href="admin/home.php" class="view-btn">Owner</a>
         </div>
         <div class="user-item">
             <img src="images/manager.jpg" alt="image not loaded" height="250" width="350">
-            <a href="manager/manager_login.php" class="view-btn">Manager</a>
+            <a href="manager/home.php" class="view-btn">Manager</a>
         </div>
     </div>
 </body>

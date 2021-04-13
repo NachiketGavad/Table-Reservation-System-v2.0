@@ -2,7 +2,6 @@
 <?php
 	require_once 'validate.php';
 	require 'name.php';
-    echo $_SESSION['hotel_id'];
 ?>
 <html lang = "en">
 	<head>
@@ -39,7 +38,7 @@
 	<div class = "container-fluid">
 		<div class = "panel panel-default">
 			<div class = "panel-body">
-				<center><img src = "../images/back.jpg" width="800px" heigh="600px" /></center>
+				<center><img src = "../images/manager.jpg" width="800px" heigh="600px" /></center>
 			</div>
 		</div>
 	</div>
