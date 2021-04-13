@@ -12,6 +12,7 @@ if (isset($_POST['login'])) {
     if ($row > 0) {
         session_start();
         $_SESSION['owner_id'] = $fetch['owner_id'];
+        $_SESSION['hotel_id'] = $fetch['hotel_id'];
 
         header("location:home.php");
     } else {

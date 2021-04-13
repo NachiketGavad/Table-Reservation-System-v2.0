@@ -18,7 +18,7 @@ $owner_id = $_SESSION['owner_id'];
     <nav style="background-color:rgba(0, 0, 0, 0.1);" class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Hotel Online Reservation</a>
+                <a class="navbar-brand">Hotel Details</a>
             </div>
             <ul class="nav navbar-nav pull-right ">
                 <li class="dropdown">
@@ -34,7 +34,7 @@ $owner_id = $_SESSION['owner_id'];
         <ul class="nav nav-pills">
             <li><a href="home.php">Home</a></li>
             <li><a href="account.php">Manager Accounts</a></li>
-            <li class = "active"><a href="hotel.php">Hotel</a></li>
+            <li class="active"><a href="hotel.php">Hotel</a></li>
         </ul>
     </div>
     <br />
@@ -74,13 +74,15 @@ $owner_id = $_SESSION['owner_id'];
                         ?>
                             <tr>
                                 <td><?php echo $fetch['hotel_name'] ?></td>
-                                <td><?php echo $fetch['capacity'] ?></td>
+                                <td><?php echo $fetch['capacity']; ?></td>
                                 <td>
                                     <center><img src="../photo/<?php echo $fetch['photo'] ?>" height="50" width="50" /></center>
                                 </td>
                                 <td>
-                                    <center><a class="btn btn-warning" href="edit_hotel_detail.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a> <a class="btn btn-danger" onclick="confirmationDelete(this); return false;" href="delete_hotel.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-remove"></i> Delete</a></center>
-                                </td>
+                                    <center><a class="btn btn-success" href="menu.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Menu</a> <a class="btn btn-warning" href="edit_hotel_detail.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a> <a class="btn btn-danger" onclick="confirmationDelete(this); return false;" href="delete_hotel.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-remove"></i> Delete</a></center>
+                                </td> <?php
+                                        $_SESSION['hotel_id'] = $fetch['hotel_id'];
+                                        ?>
                             </tr>
                         <?php
                         }
@@ -93,7 +95,7 @@ $owner_id = $_SESSION['owner_id'];
     <br />
     <br />
     <div style="text-align:right; margin-right:10px;" class="navbar navbar-default navbar-fixed-bottom">
-        <label>&copy;  Mini Project 1B  </label>
+        <label>&copy; Mini Project 1B </label>
     </div>
 </body>
 <script src="../js/jquery.js"></script>
