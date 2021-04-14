@@ -15,10 +15,8 @@ if (isset($_POST['login'])) {
 
         header("location:user_home.php");
     } else {
-        ?>
-        <script>
+?> <script>
             alert("Invalid username or password");
         </script><?php
                 }
             }
-                    ?>

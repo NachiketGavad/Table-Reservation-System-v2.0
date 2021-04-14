@@ -16,6 +16,7 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Hotel View</title>
+                <link href="css/bootstrap.min.css" rel="stylesheet">
                 <link rel="stylesheet" href="css/hotelView.css">
                 <style>
                     body::before {
@@ -50,6 +51,8 @@
                 Enter Date <input type="date" name="date" id="datetimecheck">
                 <button name="add_guest" class="view-btn"> Submit</button>
                 <!-- <a href="add_query_reserve.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest"> submit</a> -->
+                <a href="view_menu.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest"> View Menu</a>
+                <a href="user_home.php?customer_id=<?php echo $customer_id ?>" class="btn-warning text-center border py-1 px-2" style="text-decoration: none;"> close</a>
             </form>
             <?php require_once "add_query_reserve.php"; ?>
         </div>

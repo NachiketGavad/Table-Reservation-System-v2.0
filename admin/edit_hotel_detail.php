@@ -54,7 +54,7 @@ require 'name.php';
 						</div>
 						<div class="form-group">
 							<label>Capacity</label>
-							<input type="number" min="0" max="9999" value="<?php echo $fetch['capacity'] ?>" class="form-control" name="capacity" />
+							<input type="number" min="0" max="9999" value="<?php echo $fetch['capacity'] ?>" class="form-control" name="capacity" readonly/>
 						</div>
 						<div class="form-group">
 							<label>Hotel Location</label>
