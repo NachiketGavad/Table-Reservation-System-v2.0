@@ -40,7 +40,7 @@
                     </div>
             <?php }
             } else {
-                echo "<center>Hotel has not set the menu</center>";
+                echo "<center>Hotel Owner/Managers has not set the menu</center>";
             }
             ?>
         </div>
