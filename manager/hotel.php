@@ -107,11 +107,11 @@ $owner_id = $_SESSION['owner_id'];
         }
     }
 </script>
-
+<!-- 
 <script type="text/javascript">
     $(document).ready(function() {
         $("#table").DataTable();
     });
-</script>
+</script> -->
 
 </html>

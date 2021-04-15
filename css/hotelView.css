@@ -34,7 +34,7 @@ header{
     text-align: center;
     color: white;
     font-family: ubuntu;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-shadow: 1px 1px black;
     background-color: rgba(0, 0, 0, 0.251);
 }
@@ -43,7 +43,7 @@ header{
     flex-flow: column wrap;
     justify-content: center;
     width: max-content;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: ubuntu;
     margin: 2rem auto;
     padding: 1rem;
@@ -61,11 +61,40 @@ header{
     border-radius: 5px;
     text-decoration: none;
     color: white;
-    padding: 3px;
-    margin: 5px auto 0px auto;
-    width: 3rem;
+    margin: 2px auto 0px auto;
+    width: 4rem;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Baloo Bhai;
+    box-shadow: 1px 1px black;
+    font-size: 15px;
 }
 .view-btn:hover{
     background-color: green;
+}
+.view-btn-close{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #ffc107;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 2px auto 0px auto;
+    width: 4rem;
+    text-align: center;
+    font-family: Baloo Bhai;
+    box-shadow: 1px 1px black;
+    font-size: 15px;
+}
+.view-btn-close:hover{
+    background-color: rgb(223, 145, 43);
+}
+.button{
+    display: flex;
+    margin: .5rem;
+}
+a:hover{
+    color: white;
 }

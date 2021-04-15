@@ -16,6 +16,7 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Hotel View</title>
+                
                 <link rel="stylesheet" href="css/hotelView.css">
                 <style>
                     body::before {
@@ -48,8 +49,12 @@
             Hotel Capacity = <?php echo $capacity, "Tables" ?>
             <form method="post">
                 Enter Date <input type="date" name="date" id="datetimecheck">
-                <button name="add_guest" class="view-btn"> Submit</button>
-                <!-- <a href="add_query_reserve.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest"> submit</a> -->
+                <div class="button">
+                    <button name="add_guest" class="view-btn"> Submit</button>
+                    <!-- <a href="add_query_reserve.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest"> submit</a> -->
+                    <a href="view_menu.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest">Menu</a>
+                </div>
+                <a href="user_home.php?customer_id=<?php echo $customer_id ?>" class="view-btn-close"> close</a>
             </form>
             <?php require_once "add_query_reserve.php"; ?>
         </div>
