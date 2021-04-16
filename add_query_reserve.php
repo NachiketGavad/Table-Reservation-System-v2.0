@@ -13,8 +13,12 @@ if (isset($_POST['add_guest'])) {
         echo 'Must be present date';
     } else {
         $query = $conn->query("SELECT * FROM `transaction` WHERE `date` = '$checkin ' && `hotel_id` = '$hotel_id' && `status` = 'checkin'") or die(mysqli_error($conn));
+        // echo $query." ";
         while ($fetch = $query->fetch_array()) {
             echo $fetch['table_no'] . " ";
+            if ($table_no==$fetch['table_no']) {
+                $table_no++;
+            }
         }
         $row = $query->num_rows;
         $query1 = $conn->query("SELECT * FROM `hotel` WHERE `hotel_id` = '$hotel_id' ") or die(mysqli_error(die));
@@ -22,12 +26,12 @@ if (isset($_POST['add_guest'])) {
         echo $row . " ";
         $capacity = $fetch1['capacity'];
         echo $capacity . " ";
-        $capacity = $capacity - $row;
-        echo $capacity;
-        if ($capacity == 0) {
+        $newcapacity = $capacity - $row;
+        echo $newcapacity;
+        if ($newcapacity == 0) {
             echo "\n No Table is empty, please try another time";
         } else {
-            $query2 = $conn->query("INSERT INTO `transaction` (`customer_id`, `hotel_id`, `table_no`, `status`, `date`) VALUES (`$customer_id`,`$hotel_id`,`$table_no`,`$status`,`$checkin`)") or die(mysqli_error($conn));
+            $query2 = $conn->query("INSERT INTO `transaction` (`customer_id`, `hotel_id`, `table_no`, `status`, `date`) VALUES ('$customer_id','$hotel_id','$table_no','$status','$checkin')") or die(mysqli_error($conn));
         }
     }
 }
