@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" href="css/main_page.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-    <nav>Table Reservation System</nav>
+    <?php include 'header.php'; ?>
     <p>Welcome to the Table Reservation System.</p>
     <div class="user">
         <div class="user-item">

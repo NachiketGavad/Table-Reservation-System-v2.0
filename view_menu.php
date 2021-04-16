@@ -45,8 +45,10 @@
             ?>
         </div>
     </div>
-    <a href="hotel_view.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="btn-warning text-center border py-1 px-2" style="text-decoration: none;"> close</a>
-    <!-- Optional JavaScript; choose one of the two! -->
+    <div class="wrapper text-center mt-4">
+        <a href="hotel_view.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="btn-warning text-center border py-1 px-2" style="text-decoration: none;"> close</a>
+        <!-- Optional JavaScript; choose one of the two! -->
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

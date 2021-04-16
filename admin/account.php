@@ -62,7 +62,7 @@ echo $_SESSION['hotel_id'];
 					</thead>
 					<tbody>
 						<?php
-						$query = $conn->query("SELECT * FROM `manager` where 'owner_id'=$owner_id") or die(mysqli_error("$conn"));
+						$query = $conn->query("SELECT * FROM `manager` WHERE owner_id = $owner_id") or die(mysqli_error("$conn"));
 						while ($fetch = $query->fetch_array()) {
 						?>
 							<tr>

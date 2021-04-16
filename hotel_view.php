@@ -16,7 +16,7 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Hotel View</title>
-                
+
                 <link rel="stylesheet" href="css/hotelView.css">
                 <style>
                     body::before {
@@ -56,7 +56,7 @@
                 </div>
                 <a href="user_home.php?customer_id=<?php echo $customer_id ?>" class="view-btn-close"> close</a>
             </form>
-            <?php require_once "add_query_reserve.php"; ?>
+            <?php require_once "add_query_reserve.php" ?>
         </div>
             </body>
 

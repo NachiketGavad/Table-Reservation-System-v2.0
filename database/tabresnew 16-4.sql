@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2021 at 06:09 AM
+-- Generation Time: Apr 16, 2021 at 07:47 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -35,51 +35,6 @@ CREATE TABLE `customer` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`customer_id`, `username`, `customer_name`, `contactno`, `password`) VALUES
-(6, 'fd', 'df', '344', 'afd'),
-(7, 'first', 'first', '344', 'first');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `guest`
---
-
-CREATE TABLE `guest` (
-  `guest_id` int(11) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `middlename` varchar(30) NOT NULL,
-  `lastname` varchar(40) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `contactno` varchar(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `guest`
---
-
-INSERT INTO `guest` (`guest_id`, `firstname`, `middlename`, `lastname`, `address`, `contactno`) VALUES
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -95,13 +50,6 @@ CREATE TABLE `hotel` (
   `owner_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `hotel`
---
-
-INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `capacity`, `photo`, `hotel_location`, `owner_id`) VALUES
-(11, 'Taj Hotel', 20, 'a.jpg', 'Mumbai', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -115,14 +63,6 @@ CREATE TABLE `manager` (
   `password` varchar(24) NOT NULL,
   `owner_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `manager`
---
-
-INSERT INTO `manager` (`manager_id`, `manager_name`, `username`, `password`, `owner_id`) VALUES
-(1, 'Administrator', 'Admin', '12345', 1),
-(2, 'Harsh', 'harsh', 'harsh', 1);
 
 -- --------------------------------------------------------
 
@@ -138,13 +78,6 @@ CREATE TABLE `menu` (
   `hotel_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `menu`
---
-
-INSERT INTO `menu` (`menu_id`, `menu_name`, `price`, `photo`, `hotel_id`) VALUES
-(6, 'chicken', 100, '9.jpg', 11);
-
 -- --------------------------------------------------------
 
 --
@@ -159,13 +92,6 @@ CREATE TABLE `owner` (
   `hotel_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `owner`
---
-
-INSERT INTO `owner` (`owner_id`, `owner_name`, `username`, `password`, `hotel_id`) VALUES
-(1, 'Nachiket1', 'nachiketgavad', 'nachiket', 8);
-
 -- --------------------------------------------------------
 
 --
@@ -174,7 +100,7 @@ INSERT INTO `owner` (`owner_id`, `owner_name`, `username`, `password`, `hotel_id
 
 CREATE TABLE `transaction` (
   `transaction_id` int(11) NOT NULL,
-  `guest_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
   `hotel_id` int(11) NOT NULL,
   `table_no` int(5) NOT NULL,
   `status` varchar(20) NOT NULL,
@@ -221,7 +147,9 @@ ALTER TABLE `owner`
 -- Indexes for table `transaction`
 --
 ALTER TABLE `transaction`
-  ADD PRIMARY KEY (`transaction_id`);
+  ADD PRIMARY KEY (`transaction_id`),
+  ADD KEY `customer_transaction` (`customer_id`),
+  ADD KEY `hotel_transaction` (`hotel_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -231,25 +159,25 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `hotel`
 --
 ALTER TABLE `hotel`
-  MODIFY `hotel_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `hotel_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
-  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menu_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `menu_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `transaction`
@@ -272,6 +200,13 @@ ALTER TABLE `hotel`
 --
 ALTER TABLE `menu`
   ADD CONSTRAINT `hotel_menu` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`hotel_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD CONSTRAINT `customer_transaction` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hotel_transaction` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`hotel_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

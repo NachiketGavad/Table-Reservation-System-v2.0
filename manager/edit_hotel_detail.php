@@ -53,7 +53,7 @@ require 'name.php';
 						</div>
 						<div class="form-group">
 							<label>Capacity</label>
-							<input type="number" min="0" max="9999" value="<?php echo $fetch['capacity'] ?>" class="form-control" name="capacity" />
+							<input type="number" min="0" max="9999" value="<?php echo $fetch['capacity'] ?>" class="form-control" name="capacity" readonly/>
 						</div>
 						<div class="form-group">
 							<label>Hotel Location</label>
@@ -67,7 +67,7 @@ require 'name.php';
 						</div>
 						<br />
 						<div class="form-group">
-							<button name="edit_hotel" class="btn btn-warning form-control"><i class="glyphicon glyphicon-edit"></i> Save Changes</button>
+							<button name="edit_hotel" class="btn btn-warning form-control"><i class="glyphicon glyphicon-edit"></i> Close</button>
 						</div>
 					</form>
 					<?php require_once 'edit_query_hotel.php' ?>

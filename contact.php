@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="css/user.css">
+    <style>
+        body::before {
+            content: "";
+            background: url(images/bg11.jpg) no-repeat center center/cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <body>

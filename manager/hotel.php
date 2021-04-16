@@ -76,7 +76,7 @@ $owner_id = $_SESSION['owner_id'];
                                     <center><img src="../photo/<?php echo $fetch['photo'] ?>" height="50" width="50" /></center>
                                 </td>
                                 <td>
-                                    <center><a class="btn btn-success" href="menu.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Menu</a> <a class="btn btn-warning" href="edit_hotel_detail.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Edit</a></center>
+                                    <center><a class="btn btn-success" href="menu.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Menu</a> <a class="btn btn-warning" href="edit_hotel_detail.php?hotel_id=<?php echo $fetch['hotel_id'] ?>"><i class="glyphicon glyphicon-edit"></i> Details</a></center>
                                 </td> <?php
                                         $_SESSION['hotel_id'] = $fetch['hotel_id'];
                                         ?>
