@@ -2,13 +2,7 @@
 <?php
 require_once 'validate.php';
 require 'name.php';
-// session_start();
-// $_SESSION['owner_id'] = $fetch['owner_id'];
-// $_SESSION['hotel_id'] = $fetch['hotel_id'];
 $owner_id = $_SESSION['owner_id'];
-echo $owner_id;
-echo $_SESSION['hotel_id'];
-
 ?>
 <html lang="en">
 

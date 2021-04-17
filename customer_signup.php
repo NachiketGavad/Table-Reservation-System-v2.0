@@ -28,7 +28,7 @@
                     <input type="text" placeholder="Name" name="customer_name" required="required" />
                 </div>
                 <div class="login-item">
-                    <input type="text" placeholder="Contact No." name="contactno" required="required" />
+                    <input type="tel" placeholder="Contact No." name="contactno" required="required" />
                 </div>
                 <div class="login-item">
                     <label for="psw">Password</label><br>
@@ -44,7 +44,7 @@
             </div>
             <p class="center"> Already have an account? <a href="customer_login.php">Login here</a>.</p>
             <!-- here is one  -->
-
+            <script src="js/sweetalert.min.js"></script>
             <?php
 
             $showAlert = false;
@@ -103,11 +103,11 @@
             if ($showAlert) {
             ?>
                 <script type="text/javascript">
-                    alert("Registration Successful");
-                    location.href = 'customer_login.php';
+                    swal("Success", "Registration Successful", "success");
+                    // location.href = 'customer_login.php';
                 </script>
             <?php
-                // header("location:login.php");
+                header("location:customer_login.php");
                 // echo ' 
                 // <strong>Success!</strong> Your account is  
                 // now created and you can login.  
@@ -118,7 +118,7 @@
 
             ?>
                 <script type="text/javascript">
-                    alert("<?php echo $showError ?>");
+                    swal("Error", "<?php echo $showError ?> ", "error");
                 </script>
             <?php
             }
@@ -126,7 +126,7 @@
             if ($exists) {
             ?>
                 <script type="text/javascript">
-                    alert("<?php echo $exists ?>");
+                    swal("Exists", "<?php echo $exists ?>", "error");
                 </script>
             <?php
             }

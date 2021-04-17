@@ -13,12 +13,15 @@ if (isset($_POST['login'])) {
         session_start();
         $_SESSION['owner_id'] = $fetch['owner_id'];
         $_SESSION['hotel_id'] = $fetch['hotel_id'];
-
+        $hotel_id = $_SESSION['hotel_id'];
+        $todaydate = date('Y-m-d');
+        $query3 = $conn->query("UPDATE `transaction` SET `status` = 'checkout' WHERE `transaction`.`status` = 'checkin' && `transaction`.`date` < '$todaydate' ");
         header("location:home.php");
     } else {
 ?>
+        <script src="js/sweetalert.min.js"></script>
         <script>
-            alert("Invalid username or password");
+            swal("Error", "Invalid username or password", "error");
         </script><?php
                 }
             }

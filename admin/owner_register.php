@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" placeholder="Hotel Name" name="hotelname" required="required" />
                 </div>
                 <div class="login-item">
-                    <input type="text" placeholder="Contact No." name="contactno" required="required" />
+                    <input type="tel" placeholder="Contact No." name="contactno" required="required" pattern="[0-9] - {10}" />
                 </div>
                 <div class="login-item">
                     <label for="psw">Password</label><br>
@@ -102,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <p class="center"> Already have an account? <a href="login.php">Login here</a>.</p>
             <!-- here is second  -->
+            <script src="js/sweetalert.min.js"></script>
             <?php
 
 
@@ -109,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
                 <script type="text/javascript">
                     alert("Registration Successful");
-                    location.href = 'login.php';
+                    location.href = 'owner_login.php';
                 </script>
             <?php
                 // header("location:login.php");
@@ -118,12 +119,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // now created and you can login.  
                 // ';
             }
-
             if ($showError) {
 
             ?>
                 <script type="text/javascript">
-                    alert("<?php echo $showError ?>");
+                    swal("Error", "<?php echo $showError ?> ", "error");
                 </script>
             <?php
             }
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($exists) {
             ?>
                 <script type="text/javascript">
-                    alert("<?php echo $exists ?>");
+                    swal("Exists", "<?php echo $exists ?>", "error");
                 </script>
             <?php
             }

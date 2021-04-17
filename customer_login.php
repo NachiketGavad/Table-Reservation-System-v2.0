@@ -38,7 +38,7 @@
             <p class="center">Don't have an account? <a href="customer_signup.php">Sign up now</a>.</p>
         </div>
     </form>
-    <?php require_once "customer_login_query.php"; ?>
+    <?php include "customer_login_query.php"; ?>
 </body>
 
 </html>

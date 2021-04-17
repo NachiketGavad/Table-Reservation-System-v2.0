@@ -14,10 +14,12 @@ require 'name.php';
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav>
         <ul>
-            <li><a href="user_home.php">Home</a></li>
-            <li><a href="control_panel.php">Control Panel</a></li>
+            <li><a href="user_home.php" >Home</a></li>
+            <li><a href="history.php" >History</a></li>
+            <li><a href="transaction.php" >Transaction</a></li>
+            <li><a href="index.php">Menu</a></li>
         </ul>
     </nav>
     <section>

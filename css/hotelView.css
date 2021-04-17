@@ -42,7 +42,7 @@ header{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    width: max-content;
+    width: 20vw;
     font-size: 1.1rem;
     font-family: ubuntu;
     margin: 2rem auto;

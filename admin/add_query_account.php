@@ -5,7 +5,7 @@
 		$password = $_POST['password'];
 		$owner_id = $_SESSION['owner_id'];
 		$query = $conn->query("SELECT * FROM `manager` WHERE `username` = '$username'") or die(mysqli_error("$conn"));
-		$valid = $conn->num_rows;
+		$valid = $query->num_rows;
 		if($valid > 0){
 			echo "<center><label style = 'color:red;'>Username already taken</center></label>";
 		}else{

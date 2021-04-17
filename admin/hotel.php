@@ -3,7 +3,6 @@
 require_once 'validate.php';
 require 'name.php';
 $owner_id = $_SESSION['owner_id'];
-echo $_SESSION['hotel_id'] ;
 ?>
 <html lang="en">
 
