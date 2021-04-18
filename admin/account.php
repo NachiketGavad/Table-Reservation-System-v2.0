@@ -35,6 +35,7 @@ $owner_id = $_SESSION['owner_id'];
 			<li><a href="home.php">Home</a></li>
 			<li class="active"><a href="account.php">Manager Accounts</a></li>
 			<li><a href="hotel.php">Hotel</a></li>
+			<li><a href="transaction.php">Transaction</a></li>
 		</ul>
 	</div>
 	<br />

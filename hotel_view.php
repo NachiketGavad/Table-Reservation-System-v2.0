@@ -51,12 +51,24 @@
         <div class="cap">
             Hotel Total Capacity = <?php echo $capacity, "Tables" ?>
             <form method="post">
-                Enter Date <input type="date" name="date" id="datetimecheck">
+                <div class="form-component">
+                    <label for="date">Enter Date : </label>
+                    <input type="date" name="date" id="datetimecheck">
+                </div>
+
+                <div class="form-component">
+                    <label for="time_slot">Enter Time Slot : </label>
+                    <select name="time_slot" id="time_slot">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                    </select>
+                </div>
                 <div class="button">
-                    <button name="check_avail" class="view-btn">check</button>
+                    <button name="check_avail" class="view-btn-check">check</button>
                     <button name="add_guest" class="view-btn"> Submit</button>
                     <!-- <a href="add_query_reserve.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest"> submit</a> -->
-                    <a href="view_menu.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn" name="add_guest">Menu</a>
+                    <a href="view_menu.php?hotel_id=<?php echo $hotel_id ?>&customer_id=<?php echo $customer_id ?>" class="view-btn-menu">Menu</a>
                 </div>
                 <a href="user_home.php?customer_id=<?php echo $customer_id ?>" class="view-btn-close"> close</a>
             </form>

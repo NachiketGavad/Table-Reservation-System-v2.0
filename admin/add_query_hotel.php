@@ -12,11 +12,26 @@ if (isset($_POST['add_hotel'])) {
     $photo_new_name = $_FILES['photo']['name'];
 
     $photo_new_name_ext = pathinfo($photo_new_name, PATHINFO_EXTENSION);
-    $photo_new_name = pathinfo($photo_new_name, PATHINFO_FILENAME);
-    $photo_new_name = $photo_new_name."_".date('YmjHis').".".$photo_new_name_ext  ;
+    if ($photo_new_name_ext == "jpg" or $photo_new_name_ext == "jpeg" or $photo_new_name_ext == "png") {
+        $photo_new_name = pathinfo($photo_new_name, PATHINFO_FILENAME);
+        $photo_new_name = $photo_new_name . "_" . date('YmjHis') . "." . $photo_new_name_ext;
 
-    move_uploaded_file($photo_tmp_name, "../photo/" . $photo_new_name);
-    $hotel_location = $_POST['hotel_location'];
-    $conn->query("INSERT INTO `hotel` (hotel_name, capacity, photo,hotel_location,owner_id) VALUES('$hotel_name', '$capacity', '$photo_new_name','$hotel_location','$owner_id')") or die(mysqli_error($conn));
-    header("location:hotel.php");
+        move_uploaded_file($photo_tmp_name, "../photo/" . $photo_new_name);
+        $hotel_location = $_POST['hotel_location'];
+        $conn->query("INSERT INTO `hotel` (hotel_name, capacity, photo,hotel_location,owner_id) VALUES('$hotel_name', '$capacity', '$photo_new_name','$hotel_location','$owner_id')") or die(mysqli_error($conn));
+
+        $sql = $conn->query("SELECT * FROM `hotel` WHERE `owner_id` = '$owner_id'") or die(mysqli_error($conn));
+        $result = $sql->fetch_array();
+        $hotel_id = $result['hotel_id'];
+        // echo $hotel_id;
+        $conn->query("UPDATE `owner` SET `hotel_id` = '$hotel_id' WHERE `owner`.`owner_id` = 1") or die(mysqli_error($conn));
+        header("location:hotel.php");
+    } else {
+?>
+        <script src="../js/sweetalert.min.js"></script>
+        <script>
+            swal("File format not supported", "Only jpg, jpeg, png format supported", "error");
+        </script>
+<?php
+    }
 }

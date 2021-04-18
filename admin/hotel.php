@@ -3,6 +3,9 @@
 require_once 'validate.php';
 require 'name.php';
 $owner_id = $_SESSION['owner_id'];
+$hotel_id = $_SESSION['hotel_id'];
+// echo $hotel_id;
+// echo $owner_id;
 ?>
 <html lang="en">
 
@@ -35,6 +38,7 @@ $owner_id = $_SESSION['owner_id'];
             <li><a href="home.php">Home</a></li>
             <li><a href="account.php">Manager Accounts</a></li>
             <li class="active"><a href="hotel.php">Hotel</a></li>
+			<li><a href="transaction.php">Transaction</a></li>
         </ul>
     </div>
     <br />
@@ -53,9 +57,9 @@ $owner_id = $_SESSION['owner_id'];
                 // the username is already present  
                 // or not in our Database 
                 if ($num == 0) {
-                    echo '<a class = "btn btn-success" href = "add_hotel_detail.php"><i class = "glyphicon glyphicon-plus"></i> Add Hotel Details</a>';
+                    echo '<a class = "btn btn-success" href = "add_hotel_detail.php"><i class = "glyphicon glyphicon-plus"></i> Add Hotel Details</a> <br>';
                 }
-                ?>
+                    ?>
                 <table id="table" class="table table-bordered">
                     <thead>
                         <tr>

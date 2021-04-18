@@ -34,6 +34,7 @@ require 'name.php';
             <li><a href="home.php">Home</a></li>
             <li><a href="account.php">Manager Accounts</a></li>
             <li><a href="hotel.php">Hotel</a></li>
+			<li><a href="transaction.php">Transaction</a></li>
             <li class="active"><a href="menu.php">Menu</a></li>
         </ul>
     </div>

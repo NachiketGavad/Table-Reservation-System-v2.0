@@ -4,8 +4,9 @@
     padding: 0;
 }
 
- /* font addition start */
- @font-face {
+/* font addition start */
+
+@font-face {
     font-family: ubuntu;
     src: url(../fonts/Ubuntu-Medium.ttf);
 }
@@ -30,7 +31,8 @@ body::before {
     height: 100vh;
     z-index: -1;
 }
-header{
+
+header {
     text-align: center;
     color: white;
     font-family: ubuntu;
@@ -38,10 +40,12 @@ header{
     text-shadow: 1px 1px black;
     background-color: rgba(0, 0, 0, 0.251);
 }
-.cap{
+
+.cap {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     width: 20vw;
     font-size: 1.1rem;
     font-family: ubuntu;
@@ -50,10 +54,10 @@ header{
     line-height: 2rem;
     border: 2px solid black;
     border-radius: 5px;
-    background-color: rgba(170 ,193 ,255, 0.537);
+    background-color: rgba(170, 193, 255, 0.537);
 }
 
-.view-btn{
+.view-btn {
     display: flex;
     flex-flow: column wrap;
     background-color: rgb(24, 194, 24);
@@ -70,10 +74,56 @@ header{
     box-shadow: 1px 1px black;
     font-size: 15px;
 }
-.view-btn:hover{
+
+.view-btn:hover {
     background-color: green;
 }
-.view-btn-close{
+
+.view-btn-check{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(194, 24, 24);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 2px auto 0px auto;
+    width: 4rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Baloo Bhai;
+    box-shadow: 1px 1px black;
+    font-size: 15px;
+}
+
+.view-btn-check:hover {
+    background-color: rgb(128, 0, 0);
+}
+
+.view-btn-menu{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(101, 24, 194);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 2px auto 0px auto;
+    width: 4rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Baloo Bhai;
+    box-shadow: 1px 1px black;
+    font-size: 15px;
+}
+
+.view-btn-menu:hover {
+    background-color: rgb(62, 0, 128);
+}
+
+.view-btn-close {
     display: flex;
     flex-flow: column wrap;
     background-color: #ffc107;
@@ -88,13 +138,22 @@ header{
     box-shadow: 1px 1px black;
     font-size: 15px;
 }
-.view-btn-close:hover{
+
+.view-btn-close:hover {
     background-color: rgb(223, 145, 43);
 }
-.button{
+
+.button {
     display: flex;
     margin: .5rem;
+    margin-top: 15px;
 }
-a:hover{
+
+a:hover {
     color: white;
+}
+
+.form-component {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

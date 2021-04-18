@@ -34,7 +34,8 @@ $hotel_id = $_SESSION['hotel_id'];
 		<ul class="nav nav-pills">
 			<li><a href="home.php">Home</a></li>
 			<li><a href="hotel.php">Hotel</a></li>
-            <li class="active"><a href="menu.php">Menu</a></li>
+			<li><a href="transaction.php">Transaction</a></li>
+			<li class="active"><a href="menu.php">Menu</a></li>
 		</ul>
 	</div>
 	<br />
@@ -89,7 +90,7 @@ $hotel_id = $_SESSION['hotel_id'];
 <script src="../js/dataTables.bootstrap.js"></script>
 <script type="text/javascript">
 	function confirmationDelete(anchor) {
-		var conf = confirm("Are you sure you want to delete this record?");
+		var conf = confirm("Are you sure you want to delete this Menu Item?");
 		if (conf) {
 			window.location = anchor.attr("href");
 		}

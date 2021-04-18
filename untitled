@@ -1,0 +1,6 @@
+
+                // swal("More than 5", "You have already 5 Entries in hotel <?php echo $hotel_name; ?> on date <?php echo $checkin; ?> on time slot <?php echo $time_slot; ?> ", "error");
+
+    $query1="set @autoid :=0"; 
+    $query2="update register set id = @autoid := (@autoid+1)";
+    $query3="alter table register Auto_Increment = 1";

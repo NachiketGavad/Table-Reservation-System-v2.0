@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 include "database/conn.php";
-session_start();
+require_once 'validate.php';
+require 'name.php';
 $customer_id = $_SESSION['customer_id'];
 ?>
 <html lang="en">
@@ -39,6 +40,7 @@ $customer_id = $_SESSION['customer_id'];
                                 <th>Hotel Name</th>
                                 <th>Photo</th>
                                 <th>Date</th>
+                                <th>Time Slot</th>
                                 <th>Table No.</th>
                                 <th>Status</th>
                             </tr>
@@ -60,6 +62,7 @@ $customer_id = $_SESSION['customer_id'];
                                             <img src="photo/<?php echo $fetch2['photo']; ?>" height="80px" width="100px" alt="not loaded" />
                                         </td>
                                         <td><?php echo $fetch['date']; ?></td>
+                                        <td><?php echo $fetch['time_slot']; ?></td>
                                         <td><?php echo $fetch['table_no']; ?></td>
                                         <td><?php echo $fetch['status']; ?> </td>
                                     </tr>

@@ -16,10 +16,16 @@ require 'name.php';
 <body>
     <nav>
         <ul>
-            <li><a href="user_home.php" >Home</a></li>
-            <li><a href="history.php" >History</a></li>
-            <li><a href="transaction.php" >Transaction</a></li>
+            <li><a href="user_home.php">Home</a></li>
+            <li><a href="history.php">History</a></li>
+            <li><a href="transaction.php">Transaction</a></li>
             <li><a href="index.php">Menu</a></li>
+            <li>
+                <a href="logout.php">Logout</a>
+            </li>
+            <li style="position:absolute;top:2px;right:5rem;color: yellow;">
+                <?php echo $name; ?>
+            </li>
         </ul>
     </nav>
     <section>

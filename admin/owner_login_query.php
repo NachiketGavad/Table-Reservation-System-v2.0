@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
         $_SESSION['hotel_id'] = $fetch['hotel_id'];
         $hotel_id = $_SESSION['hotel_id'];
         $todaydate = date('Y-m-d');
-        $query3 = $conn->query("UPDATE `transaction` SET `status` = 'checkout' WHERE `transaction`.`status` = 'checkin' && `transaction`.`date` < '$todaydate' ");
+        $query3 = $conn->query("UPDATE `transaction` SET `status` = 'checkout' WHERE `transaction`.`status` = 'Reserved' && `transaction`.`date` < '$todaydate' ");
         header("location:home.php");
     } else {
 ?>
