@@ -21,7 +21,7 @@ body::before {
     position: relative;
     margin: -10px auto;
     border: 2px solid black;
-    background: linear-gradient(to bottom left, rgba(97, 5, 184, 0.8), rgba(253, 197, 255, 0.8));
+    background: linear-gradient(to bottom left , #0575e6, #021b79);
     border-radius: 20px;
     width: 20rem;
     height: auto;
@@ -30,7 +30,7 @@ body::before {
     text-align: center;
     padding: 15px;
     box-shadow: 2px 2px 3px 3px rgb(5, 15, 3);
-    color: rgb(52, 25, 10);
+    color: rgb(255, 255, 255);
 }
 
 .login-item {
@@ -81,17 +81,18 @@ button {
     width: 5rem;
     height: 1.5rem;
     border-radius: 8px;
-    background-color: rgb(27, 169, 27);
+    background: linear-gradient(to right, #34e89e, #194556);
     color: white;
     margin: 5px;
     cursor: pointer;
 }
 button:hover{
-    background-color: rgb(31, 140, 31);
+    background: linear-gradient(to right, #21c782, #0d3240);
 }
 button:focus{
     outline: none ;
 }
 a {
     text-decoration: none;
+    color: wheat;
 }

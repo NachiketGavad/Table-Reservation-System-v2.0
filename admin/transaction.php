@@ -111,7 +111,7 @@ $hotel_id = $_SESSION['hotel_id'];
 <script src="../js/dataTables.bootstrap.js"></script>
 <script type="text/javascript">
     function confirmationDelete(anchor) {
-        var conf = confirm("Are you sure you want to delete this record?");
+        var conf = confirm("Are you sure you want to Cancel the booking?");
         if (conf) {
             window.location = anchor.attr("href");
         }

@@ -38,7 +38,6 @@ th{
     <div class="container-fluid">
         <ul class="nav nav-pills">
             <li><a href="home.php">Home</a></li>
-            <li><a href="account.php">Manager Accounts</a></li>
             <li><a href="hotel.php">Hotel</a></li>
             <li class="active"><a href="transaction.php">Transaction</a></li>
         </ul>
