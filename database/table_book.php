@@ -18,11 +18,6 @@ function table_book($conn, $checkin, $time_slot, $hotel_id, $customer_id, $table
         <script>
             swal("Error", "All Tables are sold, please try another time", "error");
         </script>
-    <?php
-    } elseif ($newcapacity < $table_req) { ?>
-        <script>
-            swal("Error", "Required number of tables not present, please try another time", "error");
-        </script>
         <?php
     } else {
         $query2 = $conn->query("INSERT INTO `transaction` (`customer_id`, `hotel_id`, `table_no`, `status`, `date`,`time_slot`) VALUES ('$customer_id','$hotel_id','$table_no','$status','$checkin','$time_slot')") or die(mysqli_error($conn));
@@ -42,18 +37,18 @@ function check_avail($conn)
     // echo $hotel_id;
     $checkin = $_POST['date'];
     $time_slot = $_POST['time_slot'];
-    $no_of_people = $_POST['no_of_people'];
-    $table_req = $no_of_people / 4;
-    $table_req = (int)$table_req;
-    $table_req_rem = $no_of_people % 4;
-    // echo $table_req . " ";
-    // echo $table_req_rem;
-    if ($table_req_rem == 0) {
-        $table_req =  $table_req;
-    } else {
-        $table_req =  $table_req + 1;
-    }
-    echo $table_req . " "; //no of tables required
+    // $no_of_people = $_POST['no_of_people'];
+    // $table_req = $no_of_people / 4;
+    // $table_req = (int)$table_req;
+    // $table_req_rem = $no_of_people % 4;
+    // // echo $table_req . " ";
+    // // echo $table_req_rem;
+    // if ($table_req_rem == 0) {
+    //     $table_req =  $table_req;
+    // } else {
+    //     $table_req =  $table_req + 1;
+    // }
+    // echo $table_req . " "; //no of tables required
     // echo $no_of_people;
     // echo $checkin . " ";
     $todaydate = date('Y-m-d');
@@ -91,14 +86,14 @@ function check_avail($conn)
             <script>
                 swal("Error", "No Table is empty, please try another time", "error");
             </script>
-        <?php
-        } elseif ($newcapacity < $table_req) { ?>
-            <script>
-                swal("Error", "Required number of tables not present, please try another time", "error");
-            </script>
 <?php
-
         }
+        // elseif ($newcapacity < $table_req) { 
+        // <!-- <script>
+        //     swal("Error", "Required number of tables not present, please try another time", "error");
+        // </script> -->
+
+        // <!-- // } -->
     }
 }
 ?>

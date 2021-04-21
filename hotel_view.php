@@ -67,10 +67,10 @@
                         <option value="dinner">Dinner</option>
                     </select>
                 </div>
-                <div class="form-component">
+                <!-- <div class="form-component">
                     <label for="no_of_people">Enter No. of People : </label>
                     <input type="number" min="1" max="<?php echo $max ?>" value="1" name="no_of_people">
-                </div>
+                </div> -->
                 <div class="button">
                     <button name="check_avail" class="view-btn-check">check</button>
                     <button name="add_guest" class="view-btn"> Submit</button>

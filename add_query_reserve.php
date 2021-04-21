@@ -20,18 +20,19 @@ if (isset($_POST['add_guest'])) {
     // echo $hotel_id;
     $checkin = $_POST['date'];
     $time_slot = $_POST['time_slot'];
-    $no_of_people = $_POST['no_of_people'];
-    $table_req = $no_of_people / 4;
-    $table_req = (int)$table_req;
-    $table_req_rem = $no_of_people % 4;
+    // $no_of_people = $_POST['no_of_people'];
+    // $table_req = $no_of_people / 4;
+    // $table_req = (int)$table_req;
+    $table_req = 0;
+    // $table_req_rem = $no_of_people % 4;
     // echo $table_req . " ";
     // echo $table_req_rem;
-    if ($table_req_rem == 0) {
-        $table_req =  $table_req;
-    } else {
-        $table_req =  $table_req + 1;
-    }
-    echo $table_req . " "; //no of tables required
+    // if ($table_req_rem == 0) {
+    //     $table_req =  $table_req;
+    // } else {
+    //     $table_req =  $table_req + 1;
+    // }
+    // echo $table_req . " "; //no of tables required
     // echo $time_slot;
     // echo $checkin . " ";
     $todaydate = date('Y-m-d');
@@ -56,19 +57,18 @@ if (isset($_POST['add_guest'])) {
         // }
         $valid = $query5->num_rows;
         // echo $valid;
-        // if ($valid == 5) {
-        // ? !here is greater than
-        // <!-- //     <script> -->
-        //         alert("You have already 5 Entries in hotel");
-        //         console.log('1');
-        //     </script>
-        //     <?php
-        // } else
+        if ($valid >= 5) { ?>
+            <script>
+                alert("You have already 5 Entries in hotel");
+               // console.log('1');
+            </script>
+            <?php
+        } else
         if ($checkin == $todaydate) {
             $dt = new DateTime("now", new DateTimeZone('Asia/Kolkata'));
             $d = $dt->format('H:i:s');
             // $d = '11:00:00';
-            echo " this is doller d " . $d;
+            // echo " this is doller d " . $d;
 
             // $d =  date("h:i:sa");
             if ($time_slot == 'breakfast') {

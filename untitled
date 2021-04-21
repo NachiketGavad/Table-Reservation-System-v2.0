@@ -49,3 +49,13 @@ swal("More than 5", "You have already 5 Entries in hotel" + "'<?php echo $hotel_
             $dt = new DateTime("now", new DateTimeZone('America/New York'));
 
 echo $dt->format('m/d/Y, H:i:s');
+
+
+table_book
+
+elseif ($newcapacity < $table_req) { ?>
+        <script>
+            swal("Error", "Required number of tables not present, please try another time", "error");
+        </script>
+        <?php
+    }
