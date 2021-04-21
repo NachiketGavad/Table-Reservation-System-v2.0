@@ -8,6 +8,7 @@
     <title>Main Page</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/main_page.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="css/phone.css">
 </head>
 
 <body>

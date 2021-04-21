@@ -36,6 +36,6 @@
             </div>
         </div>
     </form>
-    <?php require_once "owner_login_query.php"; ?>
+    <?php include "owner_login_query.php"; ?>
 </body>
 </html>

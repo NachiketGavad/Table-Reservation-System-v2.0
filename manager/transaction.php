@@ -54,6 +54,7 @@ $hotel_id = $_SESSION['hotel_id'];
                     <thead>
                         <tr>
                             <th>Customer Name</th>
+                            <th>Contact No.</th>
                             <th>Hotel Name</th>
                             <th>Photo</th>
                             <th>Date</th>
@@ -74,6 +75,7 @@ $hotel_id = $_SESSION['hotel_id'];
                         ?>
                                 <tr class="text-center">
                                     <td><?php echo $fetch1['customer_name'] ?></td>
+                                    <td><?php echo $fetch1['contactno'] ?></td>
                                     <td><?php echo $fetch2['hotel_name']; ?></td>
                                     <td>
                                         <img src="../photo/<?php echo $fetch2['photo']; ?>" height="80px" width="100px" alt="not loaded" />

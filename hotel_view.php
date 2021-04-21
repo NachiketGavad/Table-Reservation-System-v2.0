@@ -37,7 +37,10 @@
 
             <body>
                 <header>
-                    <?php echo " " . $result['hotel_name'] . "";
+                    <?php
+                    $max = 4 * $result['capacity'];
+                    echo $max;
+                    echo " " . $result['hotel_name'] . "";
                     echo " (";
                     echo  $result['hotel_location'];
                     $capacity = $result['capacity'];
@@ -63,6 +66,10 @@
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
                     </select>
+                </div>
+                <div class="form-component">
+                    <label for="no_of_people">Enter No. of People : </label>
+                    <input type="number" min="1" max="<?php echo $max ?>" value="1" name="no_of_people">
                 </div>
                 <div class="button">
                     <button name="check_avail" class="view-btn-check">check</button>

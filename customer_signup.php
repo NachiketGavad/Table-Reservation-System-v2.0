@@ -28,7 +28,7 @@
                     <input type="text" placeholder="Name" name="customer_name" required="required" />
                 </div>
                 <div class="login-item">
-                    <input type="tel" placeholder="Contact No." name="contactno" required="required" />
+                    <input type="tel" placeholder="Contact No." name="contactno" required="required" pattern="[0-9]\{10}" />
                 </div>
                 <div class="login-item">
                     <label for="psw">Password</label><br>

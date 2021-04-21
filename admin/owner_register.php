@@ -15,11 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
-    $fname = $_POST["firstname"];
-    $lname = $_POST["lastname"];
+    $fname = $_POST["owner_name"];
     $contact = $_POST["contactno"];
 
-    $sql = "Select * from owner where username='$username'";
+    $sql = "Select * from owner_tmp where username='$username'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -31,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($num == 0) {
         if (($password == $cpassword) && $exists == false) {
 
-            $sql = "INSERT INTO `owner` ( `username`,  
-                `firstname`,`lastname`,`contactno`,`password`) VALUES ('$username',  
-                '$fname','$lname','$contact','$password')";
+            $sql = "INSERT INTO `owner_tmp` ( `username`,  
+                `owner_name`,`contactno`,`password`) VALUES ('$username',  
+                '$fname','$contact','$password')";
 
             $result = mysqli_query($conn, $sql);
 
@@ -77,16 +76,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" placeholder="Enter Username" name="username" class="login-item" required><br>
                 <label>Details</label>
                 <div class="login-item">
-                    <input type="text" placeholder="Firstname" name="firstname" required="required" />
-                </div>
-                <div class="login-item">
-                    <input type="text" placeholder="Lastname" name="lastname" required="required" />
+                    <input type="text" placeholder="owner name" name="owner_name" required="required" />
                 </div>
                 <div class="login-item">
                     <input type="text" placeholder="Hotel Name" name="hotelname" required="required" />
                 </div>
                 <div class="login-item">
-                    <input type="tel" placeholder="Contact No." name="contactno" required="required" pattern="[0-9] - {10}" />
+                    <input type="tel" placeholder="Contact No." name="contactno" required="required" pattern="[0-9]\{10}" />
                 </div>
                 <div class="login-item">
                     <label for="psw">Password</label><br>

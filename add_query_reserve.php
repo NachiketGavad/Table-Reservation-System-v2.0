@@ -4,54 +4,10 @@
 require_once 'database/conn.php';
 include 'validate.php';
 include 'name.php';
+include 'database/table_book.php';
 
 if (isset($_POST['check_avail'])) {
-
-    $hotel_id = $_GET['hotel_id'];
-    $customer_id = $_SESSION['customer_id'];
-    // echo $customer_id;
-    // echo $hotel_id;
-    $checkin = $_POST['date'];
-    $time_slot = $_POST['time_slot'];
-    // echo $checkin . " ";
-    $todaydate = date('Y-m-d');
-    $query3 = $conn->query("UPDATE `transaction` SET `status` = 'checkout' WHERE `transaction`.`status` = 'Reserved' && `transaction`.`date` < '$todaydate' ");
-    $table_no = 1;
-    $status = 'Reserved';
-    if ($checkin < date("Y-m-d", strtotime('+1 HOURS'))) { ?>
-        <script>
-            swal("Error", "Must be present date", "error");
-        </script>
-    <?php
-    } else {
-        $query = $conn->query("SELECT * FROM `transaction` WHERE `date` = '$checkin ' && `time_slot` ='$time_slot' && `hotel_id` = '$hotel_id' && `status` = 'Reserved' ORDER BY table_no asc") or die(mysqli_error($conn));
-        while ($fetch = $query->fetch_array()) {
-            if ($table_no == $fetch['table_no']) {
-                $table_no++;
-            }
-        }
-        $row = $query->num_rows;
-        $query1 = $conn->query("SELECT * FROM `hotel` WHERE `hotel_id` = '$hotel_id' ") or die(mysqli_error(die));
-        $fetch1 = $query1->fetch_array();
-        $capacity = $fetch1['capacity'];
-        $newcapacity = $capacity - $row;
-        $hotel_name = $fetch1['hotel_name'];
-        // echo "Remaining Tables on \n date " . $checkin . " in Hotel " . $fetch1['hotel_name'] . " are " . $newcapacity; 
-    ?>
-        <script>
-            swal("Availability", "Remaining Tables on date " +
-                "'<?php echo $checkin ?>'" + " on time slot " + "'<?php echo $time_slot ?>'" + " in Hotel " +
-                "'<?php echo $hotel_name ?>'" + " are " +
-                "'<?php echo $newcapacity ?>'");
-        </script>
-        <?php
-        if ($newcapacity == 0) { ?>
-            <script>
-                swal("Error", "No Table is empty, please try another time", "error");
-            </script>
-<?php
-        }
-    }
+    check_avail($conn);
 }
 
 ?>
@@ -64,6 +20,18 @@ if (isset($_POST['add_guest'])) {
     // echo $hotel_id;
     $checkin = $_POST['date'];
     $time_slot = $_POST['time_slot'];
+    $no_of_people = $_POST['no_of_people'];
+    $table_req = $no_of_people / 4;
+    $table_req = (int)$table_req;
+    $table_req_rem = $no_of_people % 4;
+    // echo $table_req . " ";
+    // echo $table_req_rem;
+    if ($table_req_rem == 0) {
+        $table_req =  $table_req;
+    } else {
+        $table_req =  $table_req + 1;
+    }
+    echo $table_req . " "; //no of tables required
     // echo $time_slot;
     // echo $checkin . " ";
     $todaydate = date('Y-m-d');
@@ -76,51 +44,70 @@ if (isset($_POST['add_guest'])) {
         </script>
         <?php
     } else {
-        echo $checkin;
-        echo $hotel_id;
+        // echo $checkin;
+        // echo $hotel_id;
         $query1 = $conn->query("SELECT * FROM `hotel` WHERE `hotel_id` = '$hotel_id' ") or die(mysqli_error(die));
         $fetch1 = $query1->fetch_array();
         $capacity = $fetch1['capacity'];
-        echo $customer_id;
+        // echo $customer_id;
         $query5 = $conn->query("SELECT * FROM `transaction` WHERE `date` = '$checkin ' && `time_slot` = '$time_slot' && `hotel_id` = '$hotel_id' && `status` = 'Reserved' && `customer_id` = '$customer_id'") or die(mysqli_error($conn));
         // while ($fetch5 = $query5->fetch_array()) {
         //     echo 1;
         // }
         $valid = $query5->num_rows;
-        echo $valid;
-        if ($valid == 5) {
-        ?>
-            <script>
-                alert("You have already 5 Entries in hotel");
-               console.log('1');
-            </script>
-            <?php
-        } else {
-            $query = $conn->query("SELECT * FROM `transaction` WHERE `date` = '$checkin ' && `time_slot` = '$time_slot' && `hotel_id` = '$hotel_id' && `status` = 'Reserved' ORDER BY table_no asc") or die(mysqli_error($conn));
-            while ($fetch = $query->fetch_array()) {
-                if ($table_no == $fetch['table_no']) {
-                    $table_no++;
+        // echo $valid;
+        // if ($valid == 5) {
+        // ? !here is greater than
+        // <!-- //     <script> -->
+        //         alert("You have already 5 Entries in hotel");
+        //         console.log('1');
+        //     </script>
+        //     <?php
+        // } else
+        if ($checkin == $todaydate) {
+            $dt = new DateTime("now", new DateTimeZone('Asia/Kolkata'));
+            $d = $dt->format('H:i:s');
+            // $d = '11:00:00';
+            echo " this is doller d " . $d;
+
+            // $d =  date("h:i:sa");
+            if ($time_slot == 'breakfast') {
+                $t = '10:00:00';
+                // echo " this is user entered date " . $checkin;
+                // echo " this is for comparing with user entered date " . $todaydate;
+                // echo " this is doller t " . $t;
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for breakfast for today after 10am", "error");
+                        console.log('1');
+                    </script>
+                <?php
+                } else {
+                    table_book($conn, $checkin, $time_slot, $hotel_id, $customer_id, $table_req, $capacity, $status);
+                }
+            } elseif ($time_slot == 'lunch') {
+                $t = '15:00:00';
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for lunch for today after 3pm", "error");
+                    </script>
+                <?php
+                } else {
+                    table_book($conn, $checkin, $time_slot, $hotel_id, $customer_id, $table_req, $capacity, $status);
+                }
+            } elseif ($time_slot == 'dinner') {
+                $t = '22:00:00';
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for dinner for today after 10pm", "error");
+                    </script>
+<?php
+                } else {
+                    table_book($conn, $checkin, $time_slot, $hotel_id, $customer_id, $table_req, $capacity, $status);
                 }
             }
-            $row = $query->num_rows;
-            echo $row;
-            // echo $capacity . " ";
-            $newcapacity = $capacity - $row;
-            // echo $newcapacity;
-            // echo $row . " ";
-            if ($newcapacity == 0) { ?>
-                <script>
-                    swal("Error", "All Tables are sold, please try another time", "error");
-                </script>
-                <?php
-            } else {
-                $query2 = $conn->query("INSERT INTO `transaction` (`customer_id`, `hotel_id`, `table_no`, `status`, `date`,`time_slot`) VALUES ('$customer_id','$hotel_id','$table_no','$status','$checkin','$time_slot')") or die(mysqli_error($conn));
-                if ($query2) { ?>
-                    <script>
-                        swal("Table is reserved", "Please reach the hotel on reserved date <?php echo $checkin;  ?> and time slot <?php echo $time_slot;  ?>, Table no is <?php echo $table_no;  ?> . \nTo Cancel Reservation go to Transaction tab.", "success");
-                    </script>
-<?php }
-            }
+        } else {
+            table_book($conn, $checkin, $time_slot, $hotel_id, $customer_id, $table_req, $capacity, $status);
         }
     }
 }

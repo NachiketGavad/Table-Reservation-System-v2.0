@@ -1,6 +1,51 @@
 
                 // swal("More than 5", "You have already 5 Entries in hotel <?php echo $hotel_name; ?> on date <?php echo $checkin; ?> on time slot <?php echo $time_slot; ?> ", "error");
+swal("More than 5", "You have already 5 Entries in hotel" + "'<?php echo $hotel_name; ?>'" + "on date" + "'<?php echo $checkin; ?>'" + "on time slot" + "'<?php echo $time_slot; ?>'", "error");
+
 
     $query1="set @autoid :=0"; 
     $query2="update register set id = @autoid := (@autoid+1)";
     $query3="alter table register Auto_Increment = 1";
+
+
+    today date constraints
+
+     elseif ($checkin == $todaydate) {
+            if ($time_slot == 'breakfast') {
+                $t = '10:00:00am';
+                $d =  date("h:i:sa");
+                echo " this is user entered date " . $checkin;
+                echo " this is for comparing with user entered date " . $todaydate;
+                echo " this is doller d " . $d;
+                echo " this is doller t " . $t;
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for breakfast for today after 10am", "error");
+                    </script>
+                <?php
+                }
+            } elseif ($time_slot == 'lunch') {
+                $t = '3:00:00pm';
+                $d =  date("h:i:sa");
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for lunch for today after 10am", "error");
+                    </script>
+                <?php
+                }
+            } elseif ($time_slot == 'dinner') {
+                $t = '10:00:00pm';
+                $d =  date("h:i:sa");
+                if ($t < $d) { ?>
+                    <script>
+                        swal("Error : Time over", "You can't book for dinner for today after 10pm", "error");
+                    </script>
+                <?php
+                }
+            }
+        }
+
+        	Asia/Kolkata
+            $dt = new DateTime("now", new DateTimeZone('America/New York'));
+
+echo $dt->format('m/d/Y, H:i:s');
