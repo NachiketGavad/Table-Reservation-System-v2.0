@@ -58,6 +58,7 @@ $hotel_id = $_SESSION['hotel_id'];
 					</thead>
 					<tbody>
 						<?php
+						// echo $hotel_id;
 						$query = $conn->query("SELECT * FROM `menu` where hotel_id='$hotel_id'") or die(mysqli_error($conn));
 						while ($fetch = $query->fetch_array()) {
 						?>

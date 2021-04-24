@@ -55,6 +55,7 @@
             <h4>Nachiket Gavad - +91 9673380472</h4>
             <h4>Harsh Shukla - +91 8976114751</h4>
             <h4>Farzam Sayed - +91 9967752622 </h4>
+            <a href="project admin" class="view-btn">Admin</a>
         </div>
     </section>
     <footer>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +11,18 @@
 </head>
 
 <body>
-<?php include 'admin_header.php'; ?>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.php">Menu</a></li>
+        </ul>
+    </nav>
     <form method="POST">
         <div class="icon">
             <img src="../icons/user.png" alt="">
         </div>
         <div class="login-container">
             <div class="main">
-                <h1>Owner Login</h1>
+                <h1>Admin Login</h1>
                 <p class="login-item">Please fill the details to Login.</p>
                 <hr class="login-item">
                 <label for="Username"><b>User Name</b></label><br>
@@ -34,9 +37,9 @@
                     <button type="reset" class="center">Reset</button>
                 </div>
             </div>
-            <p class="center">Don't have an account? <a href="owner_register.php">Sign up now</a>.</p>
         </div>
     </form>
-    <?php include "owner_login_query.php"; ?>
+    <?php include "admin_login_query.php"; ?>
 </body>
+
 </html>

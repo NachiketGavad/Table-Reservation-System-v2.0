@@ -38,8 +38,8 @@
             <body>
                 <header>
                     <?php
-                    $max = 4 * $result['capacity'];
-                    echo $max;
+                    // $max = 4 * $result['capacity'];
+                    // echo $max;
                     echo " " . $result['hotel_name'] . "";
                     echo " (";
                     echo  $result['hotel_location'];

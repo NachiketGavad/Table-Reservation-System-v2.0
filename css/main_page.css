@@ -157,10 +157,12 @@ html {
     text-shadow: 1px 1px 3px rgb(7, 6, 6);
     z-index: 1;
 }
-#services{
+
+#services {
     background: linear-gradient(to right, #e0eafc, #cfdef3);
     height: 500px;
 }
+
 /* Contact Section */
 
 #contact {
@@ -182,6 +184,7 @@ html {
 .cap {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     justify-content: center;
     text-align: center;
     width: 33vw;
@@ -194,6 +197,15 @@ html {
     border-radius: 5px;
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     color: rgb(255, 254, 253);
+}
+
+.cap hr {
+    width: 20vw;
+    margin: 5px 0px;
+}
+
+.cap a {
+    margin-top: 10px;
 }
 
 footer {

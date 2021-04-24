@@ -24,7 +24,7 @@ if (isset($_POST['add_hotel'])) {
         $result = $sql->fetch_array();
         $hotel_id = $result['hotel_id'];
         // echo $hotel_id;
-        $conn->query("UPDATE `owner` SET `hotel_id` = '$hotel_id' WHERE `owner`.`owner_id` = 1") or die(mysqli_error($conn));
+        $conn->query("UPDATE `owner` SET `hotel_id` = '$hotel_id' WHERE `owner`.`owner_id` = $owner_id") or die(mysqli_error($conn));
         header("location:hotel.php");
     } else {
 ?>
