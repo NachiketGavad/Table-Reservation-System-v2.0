@@ -54,7 +54,7 @@ $admin_id = $_SESSION['admin_id'];
                     </thead>
                     <tbody>
                         <?php
-                        $query = $conn->query("SELECT * FROM `owner_tmp` where approved = 'yes'") or die(mysqli_error("$conn"));
+                        $query = $conn->query("SELECT * FROM `owner_tmp` where approved = 'yes'") or die(mysqli_error(""));
                         while ($fetch = $query->fetch_array()) {
                         ?>
                             <tr>
