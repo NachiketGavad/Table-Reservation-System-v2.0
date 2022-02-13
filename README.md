@@ -1,4 +1,11 @@
 # Table-Reservation-System-v2.0
-Table Reservation system for Restaurants. In this project customer will visit the website and fill his details and date of reservation this will be stored in database.
-different login systems for owner and customers.
-code -> download zip -> extract -> copy folder in htdocs in xampp -> import sql file from database folder in phpmyadmin->open in browser
+-> Table Reservation system for Restaurants.
+-> Database name : "tabresnew"
+-> The system is divided in 4 modules Customer, Owner , Manager , Project Admin 
+-> Project admin will be able to see the owner requests which are received thorough owner registration panel, which are of the users who wants to use the system for showcasing their hotel.
+-> If user does not have any owner account and if wish to use the system then he can register himself here then after his account gets verified by Admin then he will be able to access the owner section.
+   -> owner can see and manage the list of menu added by him or managers for the hotel. 
+   -> owner can see and manage the list of managers appointed by him for the hotel.
+   -> Owner can see and manage the transaction details which are currently going in system. 
+-> Managers can be appointed by the owner and they can manage the respective hotel work on behalf of the owner but have less privilege than that of owner
+-> Customer will visit the website and fill in his details and date of reservation, this will be stored in database.
