@@ -1,6 +1,6 @@
 # Table-Reservation-System-v2.0
--> Table Reservation system for Restaurants.
--> Database name : "tabresnew"
+-> Table Reservation system for Restaurants.\
+-> Database name : "tabresnew"\
 -> The system is divided in 4 modules Customer, Owner , Manager , Project Admin 
 -> Project admin will be able to see the owner requests which are received thorough owner registration panel, which are of the users who wants to use the system for showcasing their hotel.
 -> If user does not have any owner account and if wish to use the system then he can register himself here then after his account gets verified by Admin then he will be able to access the owner section.
