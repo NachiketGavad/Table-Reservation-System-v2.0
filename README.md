@@ -1,11 +1,50 @@
-# Table-Reservation-System-v2.0
--> Table Reservation system for Restaurants.\
--> Database name : "tabresnew"\
--> The system is divided in 4 modules Customer, Owner , Manager , Project Admin\
--> Project admin will be able to see the owner requests which are received thorough owner registration panel, which are of the users who wants to use the system for showcasing their hotel.\
--> If user does not have any owner account and if wish to use the system then he can register himself here then after his account gets verified by Admin then he will be able to access the owner section.\
-   -> owner can see and manage the list of menu added by him or managers for the hotel.\
-   -> owner can see and manage the list of managers appointed by him for the hotel.\
-   -> Owner can see and manage the transaction details which are currently going in system. \
--> Managers can be appointed by the owner and they can manage the respective hotel work on behalf of the owner but have less privilege than that of owner\
--> Customer will visit the website and fill in his details and date of reservation, this will be stored in database.\
+# Table Reservation System v2.0
+
+Table Reservation System for Restaurants.
+
+**Database name**: "tabresnew"
+
+## Modules
+
+The system is divided into 4 modules:
+
+1. **Customer**: Customers can make reservations by providing their details and reservation dates. Data is stored in the database.
+
+2. **Owner**: Owners can manage various aspects of their restaurant, including menus, managers, and transactions.
+
+3. **Manager**: Managers are appointed by owners to handle day-to-day operations of the restaurant. They have fewer privileges than owners.
+
+4. **Project Admin**: Admins oversee the system and handle owner registration requests. They verify accounts before owners can access their sections.
+
+## Features
+
+- **Owner Registration**: Users can register as owners to use the system for showcasing their hotel. Admin verifies accounts before granting access to the owner section.
+
+- **Menu Management**: Owners can view and manage the list of menus added by themselves or managers for the hotel.
+
+- **Manager Management**: Owners can view and manage the list of managers appointed for the hotel.
+
+- **Transaction Management**: Owners can view and manage transaction details currently in the system.
+
+## Usage
+
+1. **Owner Registration**: If a user wishes to use the system but doesn't have an owner account, they can register. After verification by the Admin, they gain access to the owner section.
+
+2. **Customer Reservation**: Customers visit the website, fill in their details and reservation dates, which are then stored in the database.
+
+## Installation
+
+1. Clone the repository.
+2. Set up the database named "tabresnew".
+3. Run the application.
+
+## Technologies Used
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: PHP
+- Database: SQL, MYSQL
+- Framework: Bootstrap
+
+## Contributors
+
+- [Nachiket Gavad](https://github.com/NachiketGavad)
